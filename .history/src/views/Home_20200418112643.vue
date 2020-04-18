@@ -2,7 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
-    <h1 @click='myClick'>{{data}}</h1>
+    <h1 v-on:click='myClick'>{{data}}</h1>
   </div>
 </template>
 
@@ -22,9 +22,9 @@ export default {
     HelloWorld
   },
   methods: {
-    myClick:function() {
-      this.cont++;
-      this.$data.data = "data" + this.$data.cont;
+    myClick: () => {
+      this.cont=2;
+      this.data = "data" + this.cont;
     }
   }
 };

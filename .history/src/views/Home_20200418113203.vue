@@ -22,8 +22,8 @@ export default {
     HelloWorld
   },
   methods: {
-    myClick:function() {
-      this.cont++;
+    myClick: () => {
+      this.$data.cont=2;
       this.$data.data = "data" + this.$data.cont;
     }
   }

@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     myClick:function() {
-      this.cont++;
+      this.$data.cont=2;
       this.$data.data = "data" + this.$data.cont;
     }
   }
