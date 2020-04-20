@@ -18,14 +18,14 @@ module.exports = {
           '^/bdApi': ''
         }
       },
-      '^/user': {
+      '/user': {
         target: 'http://localhost:3000/user',
         changeOrigin: true,
         pathRewrite: {
           '^/user': ''
         }
       },
-      '^/server': {
+      '/server': {
         target: 'http://localhost:3000/',
         changeOrigin: true,
         pathRewrite: {

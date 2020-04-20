@@ -37,7 +37,7 @@ axios.interceptors.response.use(
 Vue.use(ElementUI);
 Vue.use(VueAxios, axios);
 Vue.config.productionTip = true;
-// Vue.config.productionTip = false;
+Vue.config.productionTip = false;
 
 new Vue({
   router,

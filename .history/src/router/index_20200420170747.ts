@@ -5,8 +5,12 @@ import router1 from '../components/router1.vue';
 import router2 from "../components/router2.vue";
 import store from "../components/store.vue";
 import Main1 from '../components/ContentMain.vue';
+import orc from '../components/Baidu/orc.vue';
 import user from '../components/user.vue';
+import bigFile from '../components/demo/bigFile.vue';
+
 Vue.use(VueRouter);
+
 const routes: RouteConfig[] = [
   {
     path: '/',
@@ -58,6 +62,7 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
+
 // 导航守卫
 // 使用 router.beforeEach 注册一个全局前置守卫，判断用户是否登陆
 router.beforeEach((to, from, next) => {

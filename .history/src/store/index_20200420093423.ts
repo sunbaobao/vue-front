@@ -52,9 +52,9 @@ export default new Vuex.Store({
       context.commit('increment')
     },
     initCaptcha({commit}) {
-      Vue.axios.get('/common/captcha').then(response => {
+      this.$http.get('/common/captcha').then(response => {
         // get body data
-        commit('initCaptcha',{
+        commit.initCaptcha({
           src: response
         })
       }, response => {
@@ -78,7 +78,7 @@ export default new Vuex.Store({
   },
   getters: {
     Token: state => {
-      Vue.axios.post("/bdApiP/", {
+      this.axios.post("/bdApiP/", {
         image: ""
       })
     }

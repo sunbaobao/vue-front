@@ -25,7 +25,7 @@ module.exports = {
           '^/user': ''
         }
       },
-      '^/server': {
+      '/server': {
         target: 'http://localhost:3000/',
         changeOrigin: true,
         pathRewrite: {
