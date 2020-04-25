@@ -26,11 +26,9 @@
           <el-menu-item index="4">
             <a href="https://www.ele.me" target="_blank">订单管理</a>
           </el-menu-item>
-          <el-menu-item>
+          <el-menu-item index="0">
             <el-dropdown @command="handleCommand">
-              <div>
-                <el-avatar v-if="user">{{user.username}}</el-avatar>
-              </div>
+              <el-avatar v-if="user">{{user.username}}</el-avatar>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item command="signOut">签出</el-dropdown-item>
               </el-dropdown-menu>

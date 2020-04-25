@@ -53,7 +53,7 @@
         this.$refs[formName].validate((valid) => {
           if (valid) {
             // alert('submit!');
-            this.axios.post("/server/user/sign/in", {
+            this.axios.post("/serve/user/sign/in", {
               username: this.form.name,
               password: this.form.password,
               code: this.form.code

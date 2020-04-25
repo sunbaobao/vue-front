@@ -1,49 +1,34 @@
 <template>
-  <el-container style="height:100vh;">
-    <el-header class="header" height="61px">
-      <div class="w-1200">
-        <h1 class="logo">你好!</h1>
-        <el-menu
-          :default-active="activeIndex"
-          class="el-menu-demo"
-          mode="horizontal"
-          @select="handleSelect"
-          :router="isRouter"
-        >
-          <el-menu-item index="1">游戏</el-menu-item>
-          <el-submenu index="2">
-            <template slot="title">小案例</template>
-            <el-menu-item index="/router1">router1</el-menu-item>
-            <el-menu-item index="/router2">router2</el-menu-item>
-            <el-menu-item index="/">main</el-menu-item>
-            <el-menu-item index="/store">store</el-menu-item>
-            <el-menu-item index="/user">系统用户</el-menu-item>
-            <el-submenu index="1-4">
-              <template slot="title">选项4</template>
-              <el-menu-item index="1-4-1">选项1</el-menu-item>
-            </el-submenu>
+  <el-container style="height:100vh">
+    <el-header>
+      <el-menu
+        :default-active="activeIndex"
+        class="el-menu-demo"
+        mode="horizontal"
+        @select="handleSelect"
+      >
+        <el-menu-item index="1">处理中心</el-menu-item>
+        <el-submenu index="2">
+          <template slot="title">我的工作台</template>
+          <el-menu-item index="2-1">选项1</el-menu-item>
+          <el-menu-item index="2-2">选项2</el-menu-item>
+          <el-menu-item index="2-3">选项3</el-menu-item>
+          <el-submenu index="2-4">
+            <template slot="title">选项4</template>
+            <el-menu-item index="2-4-1">选项1</el-menu-item>
+            <el-menu-item index="2-4-2">选项2</el-menu-item>
+            <el-menu-item index="2-4-3">选项3</el-menu-item>
           </el-submenu>
-          <el-menu-item index="4">
-            <a href="https://www.ele.me" target="_blank">订单管理</a>
-          </el-menu-item>
-          <el-menu-item>
-            <el-dropdown @command="handleCommand">
-              <div>
-                <el-avatar v-if="user">{{user.username}}</el-avatar>
-              </div>
-              <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item command="signOut">签出</el-dropdown-item>
-              </el-dropdown-menu>
-            </el-dropdown>
-          </el-menu-item>
-        </el-menu>
-      </div>
+        </el-submenu>
+        <el-menu-item index="3" disabled>消息中心</el-menu-item>
+        <el-menu-item index="4">
+          <a href="https://www.ele.me" target="_blank">订单管理</a>
+        </el-menu-item>
+      </el-menu>
     </el-header>
     <el-main style="padding: 0; height:100%">
-      <el-scrollbar style="height:100%">
-        <div class="w-1200">
+      <el-scrollbar>
           <router-view></router-view>
-        </div>
       </el-scrollbar>
     </el-main>
     <login-dialog></login-dialog>
@@ -62,8 +47,7 @@ export default {
   data() {
     return {
       activeIndex: "1",
-      activeIndex2: "1",
-      isRouter: true
+      activeIndex2: "1"
     };
   },
   computed: {
@@ -113,12 +97,9 @@ h1 {
   color: #ffffff;
   line-height: 60px;
 }
-.el-menu-demo {
-  float: right;
-}
-.header {
-  border-bottom: 1px solid #dcdfe6;
-}
+/* .el-menu-demo{
+  flex-di
+} */
 #app {
   /*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
   /*-webkit-font-smoothing: antialiased;*/
@@ -128,10 +109,7 @@ h1 {
   /*margin-top: 60px;*/
   min-height: 100%;
 }
-.logo {
-  color: #409eff;
-  font-weight: normal;
-}
+
 body {
   min-height: 100vh;
 }

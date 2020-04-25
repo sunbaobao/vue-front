@@ -28,9 +28,7 @@
           </el-menu-item>
           <el-menu-item>
             <el-dropdown @command="handleCommand">
-              <div>
-                <el-avatar v-if="user">{{user.username}}</el-avatar>
-              </div>
+              <el-avatar>{{user.username||user}}</el-avatar>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item command="signOut">签出</el-dropdown-item>
               </el-dropdown-menu>

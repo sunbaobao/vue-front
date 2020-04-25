@@ -1,15 +1,35 @@
 <template>
   <div id="app">
-    <router-view />
-
-    <login-dialog></login-dialog>
+    <el-container style="height:100vh">
+      <el-header style="text-align: right; font-size: 12px">
+        <h1>ELEMENT-UI</h1>
+        <el-dropdown @command="handleCommand">
+          <i class="el-icon-setting" style="margin-right: 15px"></i>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item command="signOut">退出</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+        <span v-if="user">{{user.username}}</span>
+      </el-header>
+      <el-container>
+        <Nav></Nav>
+        <el-main style="padding: 0;">
+          <el-scrollbar>
+            <el-main>
+              <router-view />
+            </el-main>
+          </el-scrollbar>
+        </el-main>
+      </el-container>
+      <login-dialog></login-dialog>
+    </el-container>
   </div>
 </template>
 
 <script>
-import Nav from "./components/Nav";
-import loginDialog from "./components/loginDialog";
-import store from "./store";
+import Nav from "../components/Nav";
+import loginDialog from "../components/loginDialog";
+import store from "../store";
 import { mapState } from "vuex";
 
 export default {
@@ -78,6 +98,12 @@ h1 {
   margin: 0;
 }
 
+.el-header {
+  background-color: #545c64;
+  color: #ffffff;
+  line-height: 60px;
+}
+
 .el-aside {
   color: #333;
 }
@@ -88,12 +114,5 @@ h1 {
 
 .el-container {
   height: calc(100% - 60px);
-}
-.w-1200 {
-  width: 1140px;
-  margin: 0 auto;
-}
-.el-scrollbar__wrap {
-  overflow-x: hidden!important;
 }
 </style>

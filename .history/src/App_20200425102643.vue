@@ -1,8 +1,19 @@
 <template>
   <div id="app">
-    <router-view />
-
-    <login-dialog></login-dialog>
+    <el-container style="height:100vh">
+      
+      <el-container>
+      
+        <el-main style="padding: 0;">
+          <el-scrollbar>
+            <el-main>
+              <router-view />
+            </el-main>
+          </el-scrollbar>
+        </el-main>
+      </el-container>
+      <login-dialog></login-dialog>
+    </el-container>
   </div>
 </template>
 
@@ -78,6 +89,12 @@ h1 {
   margin: 0;
 }
 
+.el-header {
+  background-color: #545c64;
+  color: #ffffff;
+  line-height: 60px;
+}
+
 .el-aside {
   color: #333;
 }
@@ -88,12 +105,5 @@ h1 {
 
 .el-container {
   height: calc(100% - 60px);
-}
-.w-1200 {
-  width: 1140px;
-  margin: 0 auto;
-}
-.el-scrollbar__wrap {
-  overflow-x: hidden!important;
 }
 </style>

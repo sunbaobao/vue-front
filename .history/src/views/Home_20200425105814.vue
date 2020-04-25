@@ -1,15 +1,48 @@
 <template>
-  <div id="app">
-    <router-view />
-
+  <div>
+    <div class="w-1200">
+      <el-menu
+        :default-active="activeIndex"
+        class="el-menu-demo"
+        mode="horizontal"
+        @select="handleSelect"
+      >
+        <el-menu-item index="1">处理中心</el-menu-item>
+        <el-submenu index="2">
+          <template slot="title">我的工作台</template>
+          <el-menu-item index="2-1">选项1</el-menu-item>
+          <el-menu-item index="2-2">选项2</el-menu-item>
+          <el-menu-item index="2-3">选项3</el-menu-item>
+          <el-submenu index="2-4">
+            <template slot="title">选项4</template>
+            <el-menu-item index="2-4-1">选项1</el-menu-item>
+            <el-menu-item index="2-4-2">选项2</el-menu-item>
+            <el-menu-item index="2-4-3">选项3</el-menu-item>
+          </el-submenu>
+        </el-submenu>
+        <el-menu-item index="3" disabled>消息中心</el-menu-item>
+        <el-menu-item index="4">
+          <a href="https://www.ele.me" target="_blank">订单管理</a>
+        </el-menu-item>
+      </el-menu>
+    </div>
+    <el-container>
+      <el-main style="padding: 0;">
+        <el-scrollbar>
+          <el-main>
+            <router-view></router-view>
+          </el-main>
+        </el-scrollbar>
+      </el-main>
+    </el-container>
     <login-dialog></login-dialog>
   </div>
 </template>
 
 <script>
-import Nav from "./components/Nav";
-import loginDialog from "./components/loginDialog";
-import store from "./store";
+import Nav from "../components/Nav";
+import loginDialog from "../components/loginDialog";
+import store from "../store";
 import { mapState } from "vuex";
 
 export default {
@@ -37,6 +70,7 @@ export default {
     }
   },
   mounted() {
+    console.log(1);
     if (!this.user && this.token) {
       console.log(this.token);
       this.axios
@@ -78,6 +112,12 @@ h1 {
   margin: 0;
 }
 
+.el-header {
+  background-color: #545c64;
+  color: #ffffff;
+  line-height: 60px;
+}
+
 .el-aside {
   color: #333;
 }
@@ -88,12 +128,5 @@ h1 {
 
 .el-container {
   height: calc(100% - 60px);
-}
-.w-1200 {
-  width: 1140px;
-  margin: 0 auto;
-}
-.el-scrollbar__wrap {
-  overflow-x: hidden!important;
 }
 </style>

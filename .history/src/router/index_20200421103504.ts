@@ -6,7 +6,7 @@ import router2 from "../components/router2.vue";
 import store from "../components/store.vue";
 import Main1 from '../components/ContentMain.vue';
 import user from '../components/user.vue';
-import home from '../views/Home.vue'
+import home from '../views/home.vue'
 Vue.use(VueRouter);
 const routes: RouteConfig[] = [
   {

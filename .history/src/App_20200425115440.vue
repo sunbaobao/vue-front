@@ -94,6 +94,6 @@ h1 {
   margin: 0 auto;
 }
 .el-scrollbar__wrap {
-  overflow-x: hidden!important;
+  overflow-x: hidden;
 }
 </style>

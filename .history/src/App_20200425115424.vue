@@ -89,11 +89,11 @@ h1 {
 .el-container {
   height: calc(100% - 60px);
 }
-.w-1200 {
+.w-1200{
   width: 1140px;
   margin: 0 auto;
 }
-.el-scrollbar__wrap {
-  overflow-x: hidden!important;
+.el-scrollbar__wrap{
+overflow-x: hidden;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <el-container style="height:100vh;">
-    <el-header class="header" height="61px">
+    <el-header class="header" height='61px'>
       <div class="w-1200">
         <h1 class="logo">你好!</h1>
         <el-menu
@@ -10,27 +10,25 @@
           @select="handleSelect"
           :router="isRouter"
         >
-          <el-menu-item index="1">游戏</el-menu-item>
+          <el-menu-item index="1">处理中心</el-menu-item>
           <el-submenu index="2">
             <template slot="title">小案例</template>
-            <el-menu-item index="/router1">router1</el-menu-item>
-            <el-menu-item index="/router2">router2</el-menu-item>
-            <el-menu-item index="/">main</el-menu-item>
-            <el-menu-item index="/store">store</el-menu-item>
-            <el-menu-item index="/user">系统用户</el-menu-item>
-            <el-submenu index="1-4">
-              <template slot="title">选项4</template>
-              <el-menu-item index="1-4-1">选项1</el-menu-item>
-            </el-submenu>
+           <el-menu-item index="/router1">router1</el-menu-item>
+          <el-menu-item index="/router2">router2</el-menu-item>
+          <el-menu-item index="/">main</el-menu-item>
+          <el-menu-item index="/store">store</el-menu-item>
+          <el-menu-item index="/user">系统用户</el-menu-item>
+          <el-submenu index="1-4">
+            <template slot="title">选项4</template>
+            <el-menu-item index="1-4-1">选项1</el-menu-item>
+          </el-submenu>
           </el-submenu>
           <el-menu-item index="4">
             <a href="https://www.ele.me" target="_blank">订单管理</a>
           </el-menu-item>
           <el-menu-item>
             <el-dropdown @command="handleCommand">
-              <div>
-                <el-avatar v-if="user">{{user.username}}</el-avatar>
-              </div>
+              <el-avatar>{{user.username}}</el-avatar>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item command="signOut">签出</el-dropdown-item>
               </el-dropdown-menu>
